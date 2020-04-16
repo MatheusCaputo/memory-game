@@ -1,4 +1,14 @@
-function createMemoryCard() {
+const createMemoryCard = (side) => {
+  const $memoryCardFront = `
+    <article class='memory-card -front'>
+      <img 
+        class="icon" 
+        src="img/-icon-js.png" 
+        alt="JavaScript book icon"
+        onClick='handleClick()'
+      />
+    </article>`;
+
   const $memoryCard = `
   <article class='memory-card'>
     <img 
@@ -9,22 +19,12 @@ function createMemoryCard() {
     />
   </article>`;
 
-  return $memoryCard;
-}
-
-function createMemoryCardFront() {
-  const $memoryCard = `
-  <article class='memory-card -front'>
-    <img 
-      class="icon" 
-      src="img/-icon-js.png" 
-      alt="JavaScript book icon"
-      onClick='handleClick()'
-    />
-  </article>`;
+  if (side == "front") {
+    return $memoryCardFront;
+  }
 
   return $memoryCard;
-}
+};
 
 function handleClick() {
   alert("cartinha");
