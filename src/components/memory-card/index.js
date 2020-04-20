@@ -1,31 +1,12 @@
-const createMemoryCard = (side) => {
-  const $memoryCardFront = `
-    <article class='memory-card -front'>
-      <img 
-        class="icon" 
-        src="img/-icon-js.png" 
-        alt="JavaScript book icon"
-        onClick='handleClick()'
-      />
-    </article>`;
-
-  const $memoryCard = `
-  <article class='memory-card'>
+const createMemoryCard = (card) => `
+  <article class="memory-card ${card.className}">
     <img 
-      class='icon' 
-      src='img/icon-collabcode.svg' 
-      alt='Gueio mascot' 
-      onClick='handleClick()'
+      class="icon" 
+      src= "${card.src}"
+      alt="${card.alt}"
+      onClick="handleClick()"
     />
-  </article>`;
+  </article>
+`;
 
-  if (side == "front") {
-    return $memoryCardFront;
-  }
-
-  return $memoryCard;
-};
-
-function handleClick() {
-  alert("cartinha");
-}
+const handleClick = () => alert("cartinha");
