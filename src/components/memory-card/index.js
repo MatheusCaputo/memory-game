@@ -1,9 +1,9 @@
-const createMemoryCard = (card) => `
-  <article class="memory-card ${card.className}">
+const createMemoryCard = ({ className, src, alt }) => `
+  <article class="memory-card ${className}">
     <img 
       class="icon" 
-      src= "${card.src}"
-      alt="${card.alt}"
+      src= "${src}"
+      alt="${alt}"
       onClick="handleClick()"
     />
   </article>

@@ -1,10 +1,12 @@
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
+
 const $memoryCard = createMemoryCard({
   src: "img/icon-collab.svg",
   alt: "Collab mascot icon",
 });
+
 const $memoryCardFrontJs = createMemoryCard({
   src: "img/icon-js.png",
   alt: "JavaScript book icon",
