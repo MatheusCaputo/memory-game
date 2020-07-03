@@ -79,4 +79,22 @@ function memoryCard() {
   `;
 }
 
-const handleClick = ($component) => $component.classList.toggle("-active");
+const handleClick = ($component) => {
+  if (qtdActiveMemoryCard < 2) {
+    $component.classList.add("-active");
+  }
+
+  if (qtdActiveMemoryCard === 1) {
+    setTimeout(() => {
+      const $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
+
+      $activeMemoryCards.forEach(($card) => {
+        $card.classList.remove("-active");
+      });
+
+      qtdActiveMemoryCard = 0;
+    }, 1500);
+  }
+};
